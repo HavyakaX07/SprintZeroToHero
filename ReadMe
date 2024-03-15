@@ -1,0 +1,9 @@
+This is spring frame-work revisit complete course by udemy course.
+-> Tight couple vs Loosely couple 
+	-> this is illustrated in TightCoupleExample class and LoosCoupleExample
+	   -> This is ideal approach in software development because At runtime we can bind the object and 
+	      Unit testing will be very easy and it will be very focused.
+	      
+	      
+-> Spring Framework introduction. 
+   -> XML based configuration. 

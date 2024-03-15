@@ -1,0 +1,39 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/jdbc
+        http://www.springframework.org/schema/jdbc/spring-jdbc.xsd">
+
+    <!-- Configure PostgreSQL datasource -->
+    <bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource">
+        <property name="driverClassName" value="org.postgresql.Driver"/>
+        <property name="url" value="jdbc:postgresql://localhost:5432/test"/>
+        <property name="username" value="postgres"/>
+        <property name="password" value="Hegde"/>
+        <!-- Other properties like maxTotal, maxIdle, etc. can be configured here -->
+    </bean>
+
+    <!-- Configure JdbcTemplate -->
+    <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+        <!-- This is constructor injection -->
+        <constructor-arg ref="dataSource"/>
+    </bean>
+    
+    <!-- Lets Create EmployeeSalayDaoImpl bean and give above created jdbc template to component -->
+    <bean id="employeeSalaryDao" class="com.example.SpringFrameWorkXmlBasedConfiguration.EmployeeSalaryDaoImpl">
+    	<!-- This is setter injection 
+    	Setter should be present in Dao class-->
+    <property name="jdbcTemplate" ref="jdbcTemplate"/>
+    </bean>
+    
+    <bean id="employeeSalaryService" class="com.example.SpringFrameWorkXmlBasedConfiguration.EmployeeSalaryServiceImpl" name = "empSalaryService">
+    	<!-- This is setter injection -->
+    <property name="empSalaryDao" ref="employeeSalaryDao"/>
+    </bean>
+</beans>
