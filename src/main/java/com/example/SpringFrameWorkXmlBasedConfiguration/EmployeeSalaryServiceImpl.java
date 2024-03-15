@@ -4,10 +4,10 @@ public class EmployeeSalaryServiceImpl implements EmployeeSalaryService {
 
 	private EmployeeSalaryDao empSalaryDao;
 	
+	//Setter injection happens if setter is commented then wont work.
 	public void setEmpSalaryDao(EmployeeSalaryDao empSalaryDao) {
 		this.empSalaryDao = empSalaryDao;
 	}
-
 
 	@Override
 	public void computeSalary(long grossSalary,long empId) {

@@ -7,7 +7,7 @@ public class EmployeeSalaryDaoImpl implements EmployeeSalaryDao {
 
 	private JdbcTemplate jdbcTemplate;
 
-    // Setter method for JdbcTemplate dependency
+    //Setter injection happens if setter is commented then wont work.
     public void setJdbcTemplate(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
     }
