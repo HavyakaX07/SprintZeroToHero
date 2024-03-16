@@ -7,3 +7,25 @@ This is spring frame-work revisit complete course by udemy course.
 	      
 -> Spring Framework introduction. 
    -> XML based configuration. 
+    	-> Autowire : ByName, byType, Constructor.
+    	->Note : setter injection uses byType and Constructor injection make uses of byName stratergy.
+    	
+ -> What is Pojo ?
+ Pojo (Plain old java object) is any Java object which does not have any restriction on that.
+ 
+ -> What is java bean?
+ Java bean is Object which has no-arg constructor, setter-getter for all the fields and implements serializable.
+ If these conditions satisfied by the object then it will be called as java bean.
+ 
+ ->What is spring bean?
+ Object whoes life cycle is managed by the spring container is spring bean.
+ 
+ -> What is spring container and what are all the types ?
+ External framework which maintains life cycle of the spring bean is called spring container 
+ Types 1.Bean factory (Not much used nowdays)
+	   2.Application context (used is web application etc).
+	   
+-> Now lets move to Annotation based configuration.
+   We will do same example with annotation based configuration
+	   
+ 
