@@ -8,8 +8,8 @@ import org.springframework.stereotype.Component;
 
 /*
  * In this example we will look at what all are types of Bean.
- * If you want same bean for every method call then this will be called Singleton
- * If you want different bean for every method call the this will be called prototype.
+ * If you want same bean for every method call then this will be called Singleton (use case when no need to hold of state of object)
+ * If you want different bean for every method call the this will be called prototype. (use case when need to hold of state of object statefullness like user data )
  * 
  * This things are called scope of the bean.
  * 
