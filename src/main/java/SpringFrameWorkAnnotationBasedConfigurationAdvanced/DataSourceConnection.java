@@ -10,7 +10,7 @@ public class DataSourceConnection {
 	public BasicDataSource getDataSource(){
 		BasicDataSource dataSource = new BasicDataSource();
         dataSource.setDriverClassName("org.postgresql.Driver");
-        dataSource.setUrl("jdbc:postgresql://localhost:5433/test");
+        dataSource.setUrl("jdbc:postgresql://localhost:5432/test");
         dataSource.setUsername("postgres");
         dataSource.setPassword("Hegde");
         // Configure other properties like maxTotal, maxIdle, etc.

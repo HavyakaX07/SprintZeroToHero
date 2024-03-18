@@ -1,5 +1,7 @@
 package SpringFrameWorkAnnotationBasedConfigurationAdvanced;
 
+import java.sql.Types;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Primary;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -20,6 +22,12 @@ public class EmployeeSalaryUpdateDaoPGAdminImpl implements EmployeeSalaryUpdateD
 
 	@Override
 	public void updateSalary(long salary, long empId) {
+		String sqlQuery = "UPDATE public.\"emplyoeeSalary\" SET \"empSalary\"=? WHERE \"empId\"=?;";
+		Object[] params = {salary,empId};
+		int[] types = {Types.BIGINT,Types.BIGINT};
+		int affectedRows = jdbcTemplate.update(sqlQuery, params, types);
+		System.out.println("Affected Rows after update "+affectedRows);
+		System.out.println("Postgres way of updating salary info");
 		System.out.println("update salry via pgadmin implementation");
 
 	}
