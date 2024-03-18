@@ -30,5 +30,15 @@ public class SpringApplicationSalaryUpdateRunner {
 			service.computeSalary(empSalary, empId);
 		}
 	}
+	
+	/*
+	 * So in this example we understood easy way of configuration. and difference between @Component and @Bean Annotation
+	 * 
+	 *@Component -> can be used on class, and spring will create the bean and will manage it.
+	 *           -> way to inject the beans are constructor injection, setter injection and field injection.
+	 *
+	 *@Bean -> mostly used on method and we will write code to create the bean and spring will manage it.
+	 *      -> way to Inject the beans are call method, and via parameter.
+	 */
 
 }
