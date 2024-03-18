@@ -19,6 +19,14 @@ public class EmployeeSalaryUpdateServiceImpl implements EmployeeSalaryUpdateServ
 		this.employeeSalaryUpdateDao = employeeSalaryUpdateDao;
 	}
 
+	/*
+	 * If there is no @Primary and @Qualifier annotation then this will give error.
+	public EmployeeSalaryUpdateServiceImpl(EmployeeSalaryUpdateDao employeeSalaryUpdateDao) {
+		super();
+		this.employeeSalaryUpdateDao = employeeSalaryUpdateDao;
+	}
+	*/
+
 	@Override
 	public void computeSalary(long salary, long empId) {
 		employeeSalaryUpdateDao.updateSalary(salary, empId);
